@@ -1,0 +1,10 @@
+https://mermaid.ink/img/pako:eNplkcFuwjAQRH8l8hmSkrRQfODUHqtWosdIaLE3yYrEdu0NFKH8ex1CObQ-rd6OZ6TZi1BWo5Ai4FePRuELQe2hK00SnwPPpMiB4WTv7Smg_7-I8DjyaXOTzTebicvk4337mTTMLsgsC9xrwpCqkDbYBjIHSivK8Bs61yI4lxk87Yxl3AUHkyUopiMw3pNGOM3zmHNLlFGn0HHikInJmmR0SZTH-FVPnzT-8RIz0aHvgHSs4DKKSsENdlgKGUcN_lCK0gxRBz3b7dkoIdn3OBO909HnVpeQFbThTl81sfV32FrQMUteBJ_dWHZNgaOlsqaieuS9byP-LWlcpzVx0-9TZbsskG5i4c1xvcyW-fIZ8gKXqwKeikKr_WL9XOWPi0qvHhY5iGGYCbzmv02XvR54-AFIw6jq?type=png)](https://mermaid.live/edit#pako:eNplkcFuwjAQRH8l8hmSkrRQfODUHqtWosdIaLE3yYrEdu0NFKH8ex1CObQ-rd6OZ6TZi1BWo5Ai4FePRuELQe2hK00SnwPPpMiB4WTv7Smg_7-I8DjyaXOTzTebicvk4337mTTMLsgsC9xrwpCqkDbYBjIHSivK8Bs61yI4lxk87Yxl3AUHkyUopiMw3pNGOM3zmHNLlFGn0HHikInJmmR0SZTH-FVPnzT-8RIz0aHvgHSs4DKKSsENdlgKGUcN_lCK0gxRBz3b7dkoIdn3OBO909HnVpeQFbThTl81sfV32FrQMUteBJ_dWHZNgaOlsqaieuS9byP-LWlcpzVx0-9TZbsskG5i4c1xvcyW-fIZ8gKXqwKeikKr_WL9XOWPi0qvHhY5iGGYCbzmv02XvR54-AFIw6jq
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    server-->>browser: accept petition note created
+    deactivate server

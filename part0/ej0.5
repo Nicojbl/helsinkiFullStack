@@ -1,0 +1,29 @@
+https://mermaid.ink/img/pako:eNq1VMFy0zAQ_RWNzo7d2JCmPvREB4ah5ZDcMIeNtLZFbMlI69BOJv_OOjI50AuF4pP0dvXe6nm1R6mcRlnKgN9HtArfGWg89JUV_A3gySgzgCWx8-5HQP88wOBhwmNkTlvc3ka8FO_vtqIlGkKZZYFGbTCkKqQtdsHYvUlrk-Ej9EOHMAxZGCASgSJzAMIL_wTG9YLZZ51SfNjefxLaqbFHSzFL47PDr1NcD8ZyOLysQmpR8CFRmw7_c4HsXvrtL8r7CAfYKG8G-pMqHxxD3jQtCVeLC9GWieaNCMQdEgQ-ohrJ2OZ3lanrGAPWQ1Ithpiw-fwgau_68-51rdFAkzfOvsydL0dR8RuxNHWXLHkDAJVMeMGMGKH8Ki8Wy3yRryspTolI01R8_XcTo3uzNwq6bgdqL-rRMqOz0T6PVqOPKZYpg0xkj547VfOrPk5aleRgP5eqwe8rWdkT58FIbvNklSzJj5jIcZiuNE8AWdbQhQt6pw05fwE7Bywry6Okp2GaH40JxJTsVG2aCR99x_Cv_zOF08ZQO-5S5fosGN1yh7SHm1W2yldryAtcXRfwtii02i1v1nX-Zlnr66tlDvJ0SiSe9e_jsDrPrNNP5dqiww?type=png)](https://mermaid.live/edit#pako:eNq1VMFy0zAQ_RWNzo7d2JCmPvREB4ah5ZDcMIeNtLZFbMlI69BOJv_OOjI50AuF4pP0dvXe6nm1R6mcRlnKgN9HtArfGWg89JUV_A3gySgzgCWx8-5HQP88wOBhwmNkTlvc3ka8FO_vtqIlGkKZZYFGbTCkKqQtdsHYvUlrk-Ej9EOHMAxZGCASgSJzAMIL_wTG9YLZZ51SfNjefxLaqbFHSzFL47PDr1NcD8ZyOLysQmpR8CFRmw7_c4HsXvrtL8r7CAfYKG8G-pMqHxxD3jQtCVeLC9GWieaNCMQdEgQ-ohrJ2OZ3lanrGAPWQ1Ithpiw-fwgau_68-51rdFAkzfOvsydL0dR8RuxNHWXLHkDAJVMeMGMGKH8Ki8Wy3yRryspTolI01R8_XcTo3uzNwq6bgdqL-rRMqOz0T6PVqOPKZYpg0xkj547VfOrPk5aleRgP5eqwe8rWdkT58FIbvNklSzJj5jIcZiuNE8AWdbQhQt6pw05fwE7Bywry6Okp2GaH40JxJTsVG2aCR99x_Cv_zOF08ZQO-5S5fosGN1yh7SHm1W2yldryAtcXRfwtii02i1v1nX-Zlnr66tlDvJ0SiSe9e_jsDrPrNNP5dqiww
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": "aaa", "date": "2023-12-28" }, ... ]
+    deactivate server
+
+    Note right of browser: The browser executes the callback function that renders the notes
