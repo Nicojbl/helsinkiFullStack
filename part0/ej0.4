@@ -1,0 +1,34 @@
+https://mermaid.live/edit#pako:eNq9VMFu2zAM_RVB58Ru7C1NfehpxYZhawckt3kYGIm2tdiSJ9Fpi8D_Prp2c1gxoOm6-SQ90nxPT6QOUjmNMpMBf3ZoFb4zUHpociv4a8GTUaYFS2Lr3W1A_zTA4H7Ax8iUNr-8HPFMfLlZb0RF1IYsjgN12mCIVIgqrIOxOxMVJsY7aNoaoW1ji7ffrSMcy4EiswfCI8sAjus5c0xsGecpbEm0SIaMm7RofPL7n0S-vzpJI-sLpwnkY4kPm8-fhHaqa9DSP5bYgLEcPlElVSj4J1GYGv-HwB8v0PcR9rBW3vB1P0PmNV-V8KasSLhCHAttuNC0EYG4m4PAO1QdGVv-zjJMCGPAfEiqwjAmrG-uReFd87B7XW80ELA3j338XHe-HkTO82xpaC-Z8QYAcjnjBVfEEUrOknSerOaLJJein4koisS3vzdxdG_yRkFdb0HtRNFZNczjaJ9Hq9GPKQ8jJGeyQc-doPkFOgxcueRgM0nV4He5zG3PedCRW99bJTPyHc5k1w5Hml4rmRVQhyN6pQ05fwRrB0wrs4Ok-3Z460oTiEuyU4UpB7zzNcOP9zOEo9JQ1W0j5Zo4GF1xh1T7i2W8TJYrSFJcnqfwNk212i4uVkXyZlHo87NFArLv-1-LUNmw
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: accept petition
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: new HTML document
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: the css file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: the JavaScript file
+    deactivate server
+
+    Note right of browser: The browser starts executing the JavaScript code that fetches the JSON from the server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: [{ "content": "aaa", "date": "2023-28-12" }, ... ]
+    deactivate server
+
+    Note right of browser: The browser executes the callback function that renders the notes
