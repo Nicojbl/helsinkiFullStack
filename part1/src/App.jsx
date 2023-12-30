@@ -76,8 +76,8 @@ const Button = (props) => {
 const MostVotedAnecdote = (props) => {
   return (
     <>
-      <p>{props.value1}</p>
-      <p>has {props.value2} votes</p>
+      <p>{props.mostVotedAnecdote}</p>
+      <p>has {props.votesForAnecdote} votes</p>
     </>
   )
 }
@@ -202,7 +202,7 @@ const App = () => {
         <p>votes: {votes[selected]}</p>
         <button onClick={randomAnecdote}>Next acnedote</button>
         <h1>Anecdote with most votes</h1>
-        <MostVotedAnecdote value1={anecdotes[mostVotedAnecdote()]} value2={votes[mostVotedAnecdote()]} />
+        <MostVotedAnecdote mostVotedAnecdote={anecdotes[mostVotedAnecdote()]} votesForAnecdote={votes[mostVotedAnecdote()]} />
       </div>
     </>
   );
